@@ -1,0 +1,26 @@
+{
+  "name": "spotify",
+  "version": "1.0.0",
+  "description": "This is a spotify clone",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamvivekmane/backend.git"
+  },
+  "keywords": [
+    "spotify"
+  ],
+  "author": "its me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamvivekmane/backend/issues"
+  },
+  "homepage": "https://github.com/iamvivekmane/backend#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "slugify": "^1.6.6"
+  }
+}
