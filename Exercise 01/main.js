@@ -11,65 +11,107 @@ let oldPaths = [
   "d:\\Code\\Backend\\Backend\\Exercise 01\\this.pdf",
 ];
 
-let dir1 = ".zip";
+let folderNames = [
+  "d:\\Code\\Backend\\Backend\\Exercise 01\\zip",
+  "d:\\Code\\Backend\\Backend\\Exercise 01\\jpg",
+  "d:\\Code\\Backend\\Backend\\Exercise 01\\png",
+  "d:\\Code\\Backend\\Backend\\Exercise 01\\pdf",
+];
 
-for (let i = 0; i < 7; i++) {
-  //   if (path.extname(oldPaths[i]) == dir1) {
-  if (!fs.existsSync(dir1)) {
-    fs.mkdirSync(dir1);
+for (let i = 0; i < oldPaths.length; i++) {
+  if (path.extname(oldPaths[i]) == ".zip") {
+    try {
+      if (!fs.existsSync(folderNames[0])) {
+        fs.mkdirSync(folderNames[0]);
+        console.log("Folder created succcessfully");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+
+    let newPath = folderNames[0] + "\\" + path.basename(oldPaths[i]);
+    console.log(newPath);
+
+    fs.rename(oldPaths[i], newPath, function (err) {
+      if (err) {
+        throw err;
+      }
+      console.log("Success!");
+    });
+  } else if (path.extname(oldPaths[i]) == ".jpg") {
+    try {
+      if (!fs.existsSync(folderNames[1])) {
+        fs.mkdirSync(folderNames[1]);
+        console.log("Folder created succcessfully");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+
+    let newPath = folderNames[1] + "\\" + path.basename(oldPaths[i]);
+    console.log(newPath);
+
+    fs.rename(oldPaths[i], newPath, function (err) {
+      if (err) {
+        throw err;
+      }
+      console.log("Success!");
+    });
+  } else if (path.extname(oldPaths[i]) == ".png") {
+    try {
+      if (!fs.existsSync(folderNames[2])) {
+        fs.mkdirSync(folderNames[2]);
+        console.log("Folder created succcessfully");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+
+    let newPath = folderNames[2] + "\\" + path.basename(oldPaths[i]);
+    console.log(newPath);
+
+    fs.rename(oldPaths[i], newPath, function (err) {
+      if (err) {
+        throw err;
+      }
+      console.log("Success!");
+    });
+  } else if (path.extname(oldPaths[i]) == ".pdf") {
+    try {
+      if (!fs.existsSync(folderNames[3])) {
+        fs.mkdirSync(folderNames[3]);
+        console.log("Folder created succcessfully");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+
+    let newPath = folderNames[3] + "\\" + path.basename(oldPaths[i]);
+    console.log(newPath);
+
+    fs.rename(oldPaths[i], newPath, function (err) {
+      if (err) {
+        throw err;
+      }
+      console.log("Success!");
+    });
   }
-  let newPath =
-    oldPaths[i].replace(path.basename(oldPaths[i]), "") +
-    dir1.replace(".", "") +
-    "\\" +
-    path.basename(oldPaths[i]);
-
-  fs.rename(oldPaths[i], newPath, function (err) {
-    //   if (err) throw err;
-    console.log("Successfully renamed - AKA moved!");
-  });
-  //   }
 }
 
-// console.log("old path", oldPaths[0]);
+// try {
+//   if (!fs.existsSync(folderName1)) {
+//     fs.mkdirSync(folderName1);
+//   }
+// } catch (err) {
+//   console.log(err);
+// }
 
-// console.log(
-//   "new path",
-//   oldPaths[0].replace(path.basename(oldPaths[0]), "") +
-//     dir1.replace(".", "") +
-//     "\\" +
-//     path.basename(oldPaths[0])
-// );
+// console.log(oldPaths[0]);
+// console.log(newPath1);
 
-// \\ let newPath = "d:\\Code\\Backend\\Backend\\Exercise 01\\pdf\\sample.pdf";
-
-// \\ fs.rename(oldPath, newPath, function (err) {
-// \\   if (err) throw err;
-// \\   console.log("Successfully renamed - AKA moved!");
-// \\ });
-
-// \\ It returns the extension name of the file
-// \\ console.log(path.extname(myPath));
-
-// \\ let filename = "sample.txt";
-
-// \\ console.log(path.dirname(myPath));
-
-// \\ let oldPath = path.dirname(myPath);
-// \\ console.log(oldPath);
-
-// \\ let newPath = path.dirname(myPath) + "/txt";
-
-// \\ let newPath = "d:\\Code\\Backend\\Backend\\Exercise 01\\txt";
-// \\ console.log(newPath);
-
-// \\ if (!fs.existsSync(dir1)) {
-// \\   fs.mkdirSync(dir1);
-// \\ }
-
-// \\ if (path.extname(myPath) == ".txt") {
-// \\   fs.rename(path.dirname(filename), newPath, function (err) {
-// \\     if (err) throw err;
-// \\     console.log("Success");
-// \\   });
-// \\ }
+// fs.rename(oldPaths[0], newPath1, function (err) {
+//   if (err) {
+//     throw err;
+//   }
+//   console.log("Success!");
+// });
